@@ -1,0 +1,15 @@
+
+  <ng-container *ngFor="let item of prdListOfCat"  >
+  <div class="card" style="width: 20rem; display: inline-block; margin: 9;" [hidden]="item.quantity==0" >
+   <!-- <img [src]="createImgPath(item.img)" alt="profile picture" style="width:190px; height:170px;" />-->
+    <a (click)="openDialogImage(item)"><img [src]="createImgPath(item.img)" alt="profile picture" style="width:190px; height:170px;" /></a>
+    <div class="card-body">
+      <div><h4>Name:{{ item.name}}</h4></div>
+      <div><h4>Price:{{ item.price |currency:'EGP' }}</h4></div>
+      <div>Quantity:{{ item.quantity }}</div>
+      <span><input #itemsCount type="number" [max]="item.quantity" min="1"  style="background-color: white;"></span>&nbsp;
+      <span><button  class="btn btn-warning" (click)="AddToCartBtn(+itemsCount.value,item)">Add To Cart</button></span>
+      <div><a  class="btn btn-primary" (click)="openDialog(item)"  role="button" >Details</a></div>
+    </div>
+  </div>
+</ng-container>

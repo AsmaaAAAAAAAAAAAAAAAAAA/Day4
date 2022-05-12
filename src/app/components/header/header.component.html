@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" routerLink="/Home" routerLinkActive="active"><b>Home</b></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Order" routerLinkActive="active" aria-current="page"><b>Order</b></a>
+        </li>
+      </ul>
+    </div>
+    <input type="search" name="q" autocomplete="off"
+      class="marketing-input ui-search-suggestions__input ui-search-input-navbar__input" placeholder="Search "
+      maxlength="50" value="">
+    <button class="btn btn.primary" routerLink="/cart">
+      <i class="fa fa-shopping-cart text-light" aria-hidden="true"></i>
+      <div style="font-size: 10px;" class="badge bg-danger">{{totalitem}}</div>
+    </button>
+    <div class="navbar-nav">
+      <a [hidden]="IsUserLogged" routerLink="/Login" routerLinkActive="active" class="nav-link"><b>Login</b></a>
+      <a [hidden]="!IsUserLogged" routerLink="/Logout" routerLinkActive="active" class="nav-link"><b>Logout</b></a>
+      <a [hidden]="IsUserLogged" routerLink="/Register" routerLinkActive="active" class="nav-link"><b>Register</b></a>
+
+    </div>
+  </div>
+</nav>
